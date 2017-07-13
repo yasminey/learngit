@@ -1,0 +1,42 @@
+@charset "utf-8";
+/* CSS Document */
+body{width:100%;
+     height:auto;
+     min-height:100%;
+}
+header nav{     
+	width:100%;
+	           
+    /*margin-top:50px;*/
+    margin-left:0 !important;
+    
+}
+nav .list{
+	margin:0;
+	padding:0;
+}
+.list .user{
+	margin-top:10px;
+}
+.icon3 .word{
+display:none;
+}
+.contentP1{
+	margin-left:0 !important;
+}
+.contentP2{
+	margin-left:0 !important;
+}
+.logo{
+width:100%;
+ 
+float:none;
+display:block;
+}
+.logo-lg{
+ width:100%;
+ display:block;
+ 
+}
+.logo-mimi{display:none;}
+.aside{display:none;}

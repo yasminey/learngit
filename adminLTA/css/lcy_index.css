@@ -1,0 +1,597 @@
+@charset "utf-8";
+/* CSS Document */
+*{ margin:0; padding:0; }
+a{ text-decoration:none; }
+li{ list-style:none; }
+
+.fl{ float:left; }
+.fr{ float:right; }
+.clearFix:after{ content:''; display:block; clear:both; }
+.logo{
+ float: left;
+ height: 50px;
+ font-size: 20px;
+ line-height: 50px;
+ text-align: center;
+ width: 230px;
+ font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+ padding: 0 15px;
+ overflow: hidden;
+ background:#367fa9;
+ color:#fff;
+ text-decoration:none;
+
+}
+.logo:hover{ text-decoration:none; color:#fff; }
+.logo-mini{
+ width:50px;
+ height:50px;
+ float:left;
+ display:none;
+ font-size:18px;
+ margin:0 -15px;
+ line-height:50px;
+ text-align: 50px;
+ text-decoration:none;
+}
+/*LTA*/
+.logo-lg{
+  width:100%;
+  display:block;
+  height:50px;
+  line-height:50px;
+  text-align: 50px;
+  text-decoration:none;
+}
+/*AdminLTA*/
+
+header nav{ 
+  margin-left:230px;
+  height:50px;
+  margin-bottom:0 !important;
+  position:relative;
+  background:#3c8dbc;
+  /*opacity:0.9;*/
+}  
+/*导航*/
+
+.icon1 {
+  width:50px;
+  height:50px;
+  text-align:center;
+  display:block;
+  line-height:50px; 
+  background:#3c8dbc;
+
+
+}  
+
+.icon1 span{
+ color:#fff;
+}
+.list .ison2{
+ background:#3c8dbc;
+ position:relative;
+/* width:50px;
+ height:50px;*/
+ /*line-height:50px;*/
+
+}
+nav>a:hover{ text-decoration:none; background:#367fa9; }
+nav .list .icon2:hover{ text-decoration:none; background:#367fa9; }
+
+nav .list .icon3:hover{ text-decoration:none; background:#367fa9; }
+nav .list .listitems:hover{ text-decoration:none; background:#367fa9  ; }
+nav .list .listitems:focus{ text-decoration:none; background:#367fa9  ; }
+.list .message{
+ display:block;
+ background:url(../images/message.png) no-repeat center;
+ width:50px;
+ height:50px;
+ line-height:50px;
+ background-size:14px 14px;
+ position:relative;
+
+}
+/*信封*/
+.list .warn{
+ display:block;
+ background:url(../images/warn.png) no-repeat center;
+ width:50px;
+ height:50px;
+ line-height:50px;
+ background-size:14px 14px;
+ position:relative;
+
+}
+/*铃铛*/
+.list .gone{
+ display:block;
+ background:url(../images/gone.png) no-repeat center;
+ width:50px;
+ height:50px;
+ line-height:50px;
+ background-size:14px 14px;
+ position:relative;
+
+}
+/*旗*/
+.list .sup {
+ position:absolute;
+ top:9px; 
+ left:28px;
+ min-width:8px;
+ min-height:10px;  
+ font-size:9px;
+ text-align:center;
+ line-height:.9;
+
+ padding: 2px 3px;
+ box-sizing: border-box;
+} 
+/*上标*/
+.list .user{
+ width:25px;
+ height:25px;
+ margin-left:10px;
+ text-align:center;
+ 
+}
+/*用户图片*/
+.list .word{
+ text-align:center;
+ line-height:50px;
+ color:#fff;
+}
+/*照片后面文字*/
+/*body .nav>.list li:hover{ text-decoration:none; background:#367fa9; }*/
+nav .list .setting1{
+ background:url(../images/setting.png) no-repeat center;
+ width:50px;
+ height:50px;
+ /*line-height:50px;*/
+ background-size:15px 15px;
+ display:block;
+ text-align:center;
+ position:relative;
+}
+/*设置图标*/
+nav .list .listitems{ 
+ padding:0;
+ background:#3c8dbc; 
+ }
+/*清除a标签在框架中的默认样式*/
+nav .list  .downL{
+  position:absolute;
+  right:0;
+  left:auto;
+}
+/*改变下拉框在框架中的默认样式*/
+
+/*下拉列表第一行   */
+
+.list .downPic{
+  display:block;
+  width:40px;
+  height:40px;
+  /*margin-right:10px;*/
+  margin:-5px 5px 0 5px;
+}
+/*下拉列表里的照片*/
+.downL .listitems-LI{
+  width:260px;
+  height:60px;
+  /*padding-top:20px;*/
+  margin-bottom:-1px;
+  border-top:1px solid #f4f4f4;
+   border-bottom:1px solid #f4f4f4;
+}
+.downL .listitems-LI:hover{ background:#ece9f4; }
+/*下拉列表中li标签*/
+.downL .listitems-A{
+  width:240px;
+  height:40px;
+  box-sizing:border-box;
+  display:block;
+  text-decoration:none;
+  color:#000;
+  /*padding:10px;*/
+}
+/*下拉列表中a标签*/
+.downL .listitems-A i{
+display:inline-block;
+width:10px;
+height:10px;
+background:url(../images/clock.png) no-repeat;
+background-size:10px 10px;
+margin-left:20px;
+}
+/*i 时钟标签*/
+.downL .listitems-H{
+  font-size:15px;
+  line-height:15px;
+  margin-top:20px;
+  /*照片右边部分*/
+ 
+}
+.downL .listitems-A span{
+  font-size:9px;
+}
+/*时钟后面的时间*/
+.downL .listitems-A p{
+  font-size:12px;
+  line-height:12px;
+  color:#ccc;
+  margin:5px 0;
+  white-space: nowrap;
+}
+/*文字描述*/
+.list .header{
+  /*text-align:center;*/
+  font-size:14px;
+  line-height:28px;
+ padding-left:10px;
+  border-bottom:1px solid #f4f4f4;
+  box-sizing:border-box;
+}
+/*下拉列表第一行   */
+.downL ul{
+  height:200px;
+  overflow:auto;
+}
+/*邮件下拉框股东条*/
+.downM .downMlist{
+  display:block;
+  text-decoration:none;
+  color:#444;
+  font-size:14px;
+  border-bottom:1px solid #f4f4f4;
+  padding: 10px;
+ /*box-sizing:border-box;*/
+}
+
+
+.downM .downMlist i{
+  display:block;
+  width:258px;
+  height:20px;
+  padding-left:22px;
+ overflow: hidden;
+  text-overflow: ellipsis;
+  white-space:nowrap;
+  font-style:normal;
+}
+/*铃铛下拉列表里的小图片样式*/
+.downM .downMlist .newuser1{
+  background:url(../images/newuser1.png) no-repeat 0 center;
+  background-size:10px 10px;
+}
+/*铃铛下拉列表里的蓝色小人人*/
+.downM .downMlist .warning{
+  background:url(../images/warnp.png) no-repeat 0 center;
+  background-size:14px 14px;
+}
+/*铃铛下拉列表里警告背景小图*/
+.downM .downMlist .newuser{
+  background:url(../images/newuser.png) no-repeat 0 center;
+  background-size:10px 10px;
+}
+/*铃铛下拉列表里的红色小人人*/
+.downM .downMlist .cart{
+  background:url(../images/cart.png) no-repeat 0 center;
+  background-size:10px 10px;
+}
+/*铃铛下拉列表里的购物车*/
+.downM .downMlist .person{
+  background:url(../images/person.png) no-repeat 0 center;
+  background-size:10px 10px;
+}
+/*铃铛下拉列表里的小人*/
+.downM .downMlist:hover{ background:#ece9f4; }
+.downM .bottomMessage { background-color:#fff;-webkit-tap-highlight-color: #fff; }
+/*移动变色*/
+nav .downM,nav .downMM,nav .downL,nav .downR, nav .downRR{
+  position:absolute;
+  right:0;
+  left:auto;
+}
+/*下拉框定位右边对齐*/
+nav .downMM .downMMlist{
+ /* padding:0;*/
+  display:block;
+  text-decoration:none;
+  color:#333;
+  font-size:14px;
+  width:242px;
+  height:44px;
+  padding:10px;
+  box-sizing:border-box;
+  margin:0;
+  border-bottom: 1px solid #f4f4f4;
+
+}
+.downMM .downMMlist:hover{ background:#ece9f4; }
+
+/*旗帜下拉列表里的列表里的a*/
+nav .downMM h3{
+  margin:0;
+  padding:0;
+  font-size:14px;
+  font-weight:normal;
+  white-space:nowrap;
+  font-style:normal;
+  line-height:14px;
+  margin-bottom:5px;
+}
+/*进度条上面的文字*/
+.downMM .describe small{
+  white-space:nowrap;
+}
+nav .downMM .proGress{
+  height:7px;
+  margin-bottom:20px;
+  border-radius:0;
+}
+/*进度条的高度*/
+ .downMM ul{
+  height:160px;
+  overflow:auto;
+}
+/*旗帜滚动条*/
+.downR .userBig{
+  width:90px;
+  height:90px;
+  margin-left:100px;
+    background:#3c8dbc;
+
+}
+/*用户下拉列表的大图
+*/
+nav .downR{
+  width:278px;
+  height:278px;
+ 
+}
+.downR .userLi{
+  width:278px;
+  height:100px;
+  background:#3c8dbc;
+}
+nav .downR p{
+font-size:17px;
+text-align:center;
+color:rgba(255,255,255,0.8);
+  background:#3c8dbc;
+}
+.downR .wordBtn{
+  background:#fff;
+  height:40px;
+}
+.downR .wordBtn button{
+  width:92px;
+  height:40px;
+  color:#444;
+  opacity:1;
+  font-size:14px;
+  line-height:40px;
+ text-shadow: 0 0 0 #444;
+ text-align:center;
+}
+.downR .wordBtn button:hover{ color:#444; opacity:1;}
+.downR .wordBtn button:focus{ border:5px solid #fff; background:#fff;}
+.downR .footerBtn{
+  width:278px; 
+  height:74px;
+  background:#f4f4f4;
+  text-align:center;
+  line-height:74px;
+   opacity:0.8;
+}
+.downR .footerBtn .botton1{
+   margin-left:10px;
+   margin-top:18px;
+  background:#f4f4f4;
+   opacity:0.8;
+  /*line-height:74px;*/
+}
+.downR .footerBtn .botton2{
+   margin-right:10px;
+   margin-top:18px;
+  background:#f4f4f4;
+  opacity:0.8;
+  /*line-height:74px;*/
+}
+.downR .footerBtn button:hover{ opacity:1; }
+/*user 结束*/
+
+nav .downRR{
+  background:#000;
+  width:200px;
+  height:500px;
+}
+/*最右边设置图标*/
+.aside {
+  width:230px;
+  height:100%;
+  position:absolute;
+  top:0;
+  left:0;
+  margin-top:50px;
+  background:#222d32;
+}
+/*侧边框*/
+.aside .asideUser{
+  width:45px;
+  height:45px;
+  vertical-align:middle;
+}
+/*侧边框用户图片*/
+.aside .asideWord{
+  font-size:14px;
+  color:#fff;
+}
+.contentPart{
+/*margin-top:-20px;*/
+}
+.contentPart .info-box{
+  width:100%;
+  height:90px;
+  background:#fff;
+  opacity:0.8;
+  text-align:center;
+  margin-top:7px;
+  }
+.contentPart .info-box1{
+  width:90px;
+  height:90px;
+  background:#00c0ef;
+}
+.contentPart .info-box2{
+ 
+
+}
+.contentPart .contentIcon{
+  width:90px;
+  height:90px;
+  display:block; 
+}
+.contentPart .contentIcon1{
+  background:url(../images/setting.png) no-repeat center center;
+  background-size:36px 36px;  
+}
+.contentPart .contentIcon2{
+  background:url(../images/cart.png) no-repeat center center red;
+  background-size:36px 36px;  
+}
+.contentPart .contentIcon3{
+  background:url(../images/gone.png) no-repeat center center orange;
+  background-size:36px 36px;  
+}
+.contentPart .contentIcon4{
+  background:url(../images/warn.png) no-repeat center center green;
+  background-size:36px 36px;  
+}
+.contentPart .info-box2 .span1{
+  font-size:14px;
+  text-align:center;
+  line-height:14px;
+  white-space:nowrap;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  display:block;
+  margin:10px 5px;
+}
+.contentPart .info-box2 .span2{
+  font-size:18px;
+  line-height:18px;
+  font-weight:bold;
+  /*display:block;*/
+  margin-top:5px;
+  
+}
+.contentPart .contentP1{
+ margin-left:230px; 
+ height:60px;
+ background:#f4f4f4;
+  opacity:0.8; 
+  margin-top:0;
+}
+.contentPart .contentP1 h1{
+font-size:24px;
+line-height:24px;
+ 
+ 
+}
+.contentPart .contentP1 p{
+font-size:12px;
+line-height:12px;
+/*margin-left:280px;*/
+margin-top:24px; 
+}
+.contentPart .contentP2{
+ margin-left:230px; 
+ background:#f4f4f4;
+  opacity:0.8;
+  height:110px;
+ text-align:center; 
+}
+.contentPart .contentP3{
+ margin-top:20px; 
+ background:#f4f4f4;
+  opacity:0.8;
+  margin-left:230px;
+  /*height:110px;*/
+  
+}
+ 
+.main-sidebar .word{
+ font-size:14px;
+ margin:0 80px 0 10px;
+ color:#fff;
+ text-decoration:none;
+
+}
+.main-sidebar i{
+  font-size:14px;
+  color:#fff;
+  text-decoration:none;
+  cursor:pointer;
+}
+.main-sidebar .downA{
+  text-decoration:none;
+  font-size:14px;
+  color:#fff;
+}
+.main-sidebar .title{
+background:#222d32 ;
+opacity:1;
+border:1px solid #222d32 ;
+/*margin-top:-5px;*/
+}
+/*.main-sidebar .panel-group{
+    background:red !important;
+}*/
+.main-sidebar .panel-body{
+background:#222d32;
+}
+.main-sidebar .panelA{
+border:1px solid #222d32;  
+}
+.main-sidebar .word{
+  text-decoration:none;
+  cursor:pointer;
+}
+.main-sidebar .aa{
+  color:#fff !important;
+  font-size:14px;
+}
+ .title:hover{
+  background:#ccc;
+  opacity:0.8;
+
+}
+.asidelistS{
+  width:50px;
+  height:100%;
+  position:absolute;
+  top:45px;
+  left:0;
+  margin-top:50px;
+  background:#222d32;
+  display:none;
+}
+.asidelistS li{
+width:50px;
+height:50px;
+
+}
+.asidelistS li img{
+  width:40px;
+  height:40px;
+}
+.asidelistS li i{
+text-align:center;
+display:block;
+color:#fff;
+line-height:50px;
+}
