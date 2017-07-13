@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
+	<style type="text/css">
+		.fl{ float:left; }
+		.fr{ float:right; }
+		.clearFix:after{ content:"";display:block; clear:both; }
+		h3{ 
+			color:#817D7D;
+			width:80%;
+			height:50px;
+			border:1px solid #ccc;
+			margin:0 80px;
+			border-radius:4px;
+			line-height:50px;
+			background: #EEE9E9;
+			padding-left:10px;
+			font-size:18px;
+
+		}
+		/*新闻后台管理器内容*/
+		.container{
+			width:80% !important;
+			margin: 0 80px;
+			height:1000px;
+
+		}
+        /*左边的新闻发布器*/
+		.leftK{
+			width:37%;
+			/*margin-left: ;:64PX;*/
+			margin-left:80px;
+			margin-top:20px;
+		}
+		/*右边的新闻列表*/
+		.rightK{
+			
+			width:37%;
+			margin-left:70PX;
+			margin-top:20px;
+			/*margin:0 auto;*/
+		}
+		/*input*/
+		.container input{
+			display: block;
+			width:85%;
+			height:36px ;
+			border :1px solid #ccc;
+			margin-bottom:8px;	
+			border-radius:4px;
+		}
+		textarea{
+			display:block;
+			width:85%;
+			height:80px;
+			border :1px solid #ccc;
+			border-radius:4px;
+			margin-bottom:8px;	
+		}
+	 
+		/*删除按钮*/
+		.delectBtn{
+			width:60px;
+			font-size:14px;
+			background-color: #ca1d55;
+			border-color: #ca1d55;
+		}
+		/*关闭按钮*/
+		.closeBtn{
+			width:60px;
+		}
+		/*确认按钮*/
+		.confirmBtn{
+			width:60px;
+			font-size:14px;
+			background-color: #ca1d55;
+			border-color: #ca1d55;
+		}
+		/*提交按钮 修改按钮*/
+		.submitBtn{
+			width:60px !important;
+			margin:5px 15px;
+		}
+		#tag{
+			width:85%;
+			height:30px;
+		}
+	</style>
+	<!--  <link rel='stylesheet' href='/stylesheets/style.css' /> -->
+	
+
+</head>
+<body>
+	<header>
+
+		<div>
+			<h3>百度新闻后台管理器</h3>
+		</div>
+
+	</header>
+
+	<content class="clearFix container">
+		
+		<div class="panel panel-default fl leftK" >
+			<div class="panel-heading">新闻发布器</div>
+			<div class="panel-body">
+				<h5 >新闻标题</h5>
+				<input type="text" id="title" name=""/>
+				<p>新闻正文</p>
+				<textarea id="content"></textarea>
+				<p>新闻图片地址</p>
+				<input type="text" id="img" name=""/>
+				<p>新闻来源</p>
+				<input type="text" id="src" name=""/>
+				<p>新闻日期</p>
+				<input type="text" id="date" name=""/>
+				<p>新闻标签</p>
+				<select id="tag">
+					<option>推荐</option>
+					<option>本地</option>
+					<option>娱乐</option>
+					<option>社会</option>
+					<option>军事</option>
+					<option>女人</option>
+				</select>
+				<div class="clearFix"> 
+					<input class="btn btn-info submitBtn fl" id="submitbtn" type="submit" value="提交"> 
+					<input class="btn btn-info submitBtn fl" id="updatebtn" type="submit" value="修改">
+				</div> 
+			</div>
+		</div>
+
+
+		<div class="panel panel-default fl rightK">
+
+			<div class="panel-heading">新闻列表</div>
+
+			<!-- Table -->
+			<table class="table" id="tableBtn">
+				<tr>
+					<th>新闻编号 </th>
+					<th>新闻标题</th>
+					<th>新闻时间</th>
+					<th>操作</th>
+				</tr>
+
+				<!-- <tr id="conlistt"> -->
+					<!-- <td id="number"> </td>
+					<td id="title"> </td>
+					<td id="date"> </td>
+					<td id="btnRed">
+						<button type="button" class="btn btn-primary btn-lg delectBtn" data-toggle="modal" id='myModal1'>
+							删除
+						</button>
+						<div class="modal fade" tabindex="-1" role="dialog" id='myModal'>
+							<div class="modal-dialog" role="document">
+								<div class="modal-content">
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+										<h4 class="modal-title">确认要删除这条新闻吗</h4>
+									</div>
+									
+									<div class="modal-footer">
+										<button type="button" class="btn btn-default closeBtn" data-dismiss="modal">关闭</button>
+										<button type="button" class="btn btn-primary confirmBtn" data-dismiss="modal">确认</button>
+									</div>
+								</div>
+								
+						<! 	</div>
+							/.modal-dialog 
+						</div>
+					</td>   -->
+					<!-- </tr> -->
+					<!-- 插入数据的html -->
+				</table>
+			</div>
+
+		</content>
+ </body>		
+ <script src="/javascripts/jquery.min.js"></script>
+ <script src="/javascripts/bootstrap.min.js"></script>
+ <script type="text/javascript">
+			
+  $(document).ready(function() {
+
+	//登录后获取所有数据 刷新列表
+	getMsg();
+	function getMsg(){ 
+	   $.ajax({
+			url:'/admin/getAllLists',
+			type:'get',
+    		// data:{},
+    		success:function(data){
+    			// console.log(data.results);
+    			var arr = data.results;
+    			// $('.table').html('');
+    			$.each(arr,function(index,ele) {
+    				// console.log(results)
+    				$(`<tr class="conlist" id="conlistt${index}" bb="${ele.id}" ><td id="number${index}" >${ele.id}</td><td id="title1${index}">${ele.title}</td><td id="date1${index}">${ele.date}</td><td id="btnRed${index}"><button type="button" class="btn btn-primary btn-lg delectBtn" data-toggle="modal" data-target="#myModal${index}">删除</button><div class="modal fade" id="myModal${index}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="myModalLabel${index}">确认要删除这条信息吗</h4></div><div class="modal-footer"><button type="button" class="btn btn-default closeBtn" data-dismiss="modal">关闭</button><button type="button" class="btn btn-primary confirmBtn" data-dismiss="modal" id="del${index}" aa="${ele.id}">确认</button></div></div></div></div></td></tr>`).appendTo($('.table'));
+
+
+    			})	
+
+    		},
+    		error:function(err){
+    			console.log(err);
+    		}
+
+       })
+	}
+
+
+    // 插入一条数据
+    insert();
+   function insert(){
+    $('#submitbtn').click(function( e){
+    	 
+    	e.preventDefault();
+    	var title = $("#title").val();
+    	var content=$("#content").val();
+    	var img=$("#img").val();
+    	var src=$("#src").val();
+    	var date = $("#date").val();
+    	var tag=$("#tag").val();
+    	var json  ={
+    		title:title,
+    		content:content,
+    		img:img,
+    		src:src,
+    		date:date,
+    		tag:tag
+    	}
+    	if(title==''||content==''||img==''||src==''||date==''){
+    		if (title=='') {
+    			$("#title").css('border','1px solid red');
+    		}else{$("#title").css('border','1px solid #ccc')};
+    		if (content=='') {
+    			$("#content").css('border','1px solid red');
+    		}else{$("#content").css('border','1px solid #ccc')};
+    		if (img=='') {
+    			$("#img").css('border','1px solid red');
+    		}else{$("#img").css('border','1px solid #ccc')};
+    		if (src=='') {
+    			$("#src").css('border','1px solid red');
+    		}else{$("#src").css('border','1px solid #ccc')};
+    		if (date=='') {
+    			$("#date").css('border','1px solid red');
+    		}else{$("#img").css('border','1px solid #ccc')};
+
+    	}else{
+    		$("#title").css('border','1px solid #ccc');
+    		$("#content").css('border','1px solid #ccc');
+    		$("#img").css('border','1px solid #ccc');
+    		$("#src").css('border','1px solid #ccc');
+    		$("#date").css('border','1px solid #ccc');
+    		var title = $("#title").val();
+    	var content=$("#content").val();
+    	var img=$("#img").val();
+    	var src=$("#src").val();
+    	var date = $("#date").val();
+    	var tag=$("#tag").val();
+    	var json  ={
+    		title:title,
+    		content:content,
+    		img:img,
+    		src:src,
+    		date:date,
+    		tag:tag
+    	}
+    		$.ajax({
+    			url:'/insert/inserUser',
+    			type:'post',
+    			data:json,
+    			success:function(data){
+    				$('.table .conlist').html('');
+    				getMsg();
+    			},
+                error:function(err){
+    	          console.log(err);
+                }
+            })
+    	}  
+
+    })
+ }
+  //删除一条数据
+    $('#tableBtn').on('click','.confirmBtn',function (){
+      // alert($(this).attr('aa'))
+      var id=$(this).attr('aa');
+        $.ajax({
+      	    url:'/delectlist/deleteOne',
+      	    type:'post',
+      	    data:{id:$(this).attr('aa')},
+      	    success:function(data){
+      		  if(data.state=="ok"){
+      			 console.log(data.message)
+    			 // $(this).parents(`#conlistt${id}`).css('display','none');
+    			  window.location.reload();
+    		  }
+    	    },
+           
+            error:function(err){
+             	console.log(err);
+            }
+        })
+
+    })
+
+
+//修改信息
+    $('#tableBtn').on('click','.conlist',function (){
+	  var id=0;
+	  var _this=$(this);
+	   id=$(this).attr('bb');
+	   $('.conlist').css('background','#fff');
+	   $(this).css('background','red');
+	   $.ajax({
+		  url:'/update/uppMessage',
+		  type:'post',
+		  data:{id:id},
+		  success:function(data){
+			var arr = data.results;	 
+			id=arr[0].id;
+			console.log(arr[0])
+			$("#title").val(arr[0].title);
+			$("#content").val(arr[0].content);
+			$("#img").val(arr[0].img);
+			$("#src").val(arr[0].src);
+			$("#date").val(arr[0].date);
+			$("#tag").val(arr[0].tag);
+			
+			// 点击修改按钮
+			$('#updatebtn').click(function( e){
+				// console.log( _this.attr('bb').length);
+				// console.log(arr[0])
+				e.preventDefault();
+				 // $('.table .conlist').html('');
+		        // alert(id)
+		        var title = $("#title").val();
+		        var content=$("#content").val();
+		        var img=$("#img").val();
+		        var src=$("#src").val();
+		        var date = $("#date").val();
+		        var tag=$("#tag").val();
+		        var json  ={
+		        	id:id,
+		        	title:title,
+		        	content:content,
+		        	img:img,
+		        	src:src,
+		        	date:date,
+		        	tag:tag
+		        }
+
+		        $.ajax({
+		        	url:'/update/updatemess',
+		        	type:'post', 
+		        	data:json,
+		        	success:function(data){
+		        		$('.table .conlist').html('');
+		        		getMsg();
+
+		        	},
+		        	error:function(err){
+             	    console.log(err);
+		        	}
+                   
+
+		        })
+		    })    
+		  },
+		  error:function(err){
+             	console.log(err);
+	      }
+	   })
+    })
+})
+</script>
+</html>
